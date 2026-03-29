@@ -1,61 +1,27 @@
 body { 
-    font-family: sans-serif; 
-    text-align: center; 
-    background-color: #696969; /* Your specific grey */
-    color: white; /* Makes text readable on dark grey */
-    font-weight: bold; /* Bold everything */
-    font-size: 1.2rem; /* Bigger font */
-    margin: 0;
+    font-family: sans-serif; font-weight: bold; font-size: 1.2rem;
+    background-color: #696969; color: white; margin: 0; overflow: hidden;
 }
 
-h1 { font-size: 3rem; margin: 20px 0; }
+#main-layout { display: flex; height: 100vh; }
 
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-    gap: 20px; 
-    padding: 20px; 
-    margin-bottom: 200px; /* Space for the chat box */
+#game-area { flex: 4; overflow-y: auto; padding: 20px; } /* 4/5 of page */
+
+#sidebar { 
+    flex: 1; /* 1/5 of page */
+    background: #a9a9a9; border-left: 4px solid #333;
+    display: flex; flex-direction: column; padding: 15px; color: black;
 }
 
-.card { 
-    background: #e0e0e0; 
-    border: 5px solid #333; 
-    border-radius: 12px; 
-    padding: 10px; 
-    cursor: pointer; 
-    color: black; /* Text inside cards stays black */
-}
+#messages { flex-grow: 1; background: white; border: 2px solid #333; margin: 10px 0; overflow-y: auto; padding: 10px; }
 
-.card img { width: 100%; border-radius: 4px; }
-.card.flipped { opacity: 0.1; transform: scale(0.9); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
 
-#status-bar { 
-    background: #333; 
-    padding: 15px; 
-    border-bottom: 3px solid #00ff00;
-}
+.card { background: #e0e0e0; border: 4px solid #333; border-radius: 8px; padding: 10px; cursor: pointer; color: black; }
+.card.flipped { opacity: 0.1; }
+.card.guess-mode { border-color: gold; box-shadow: 0 0 15px gold; transform: scale(1.05); }
 
-#chat-section {
-    position: fixed; 
-    bottom: 0; 
-    right: 0; 
-    width: 350px;
-    background: #a9a9a9; /* Different grey for chat */
-    border: 3px solid #333; 
-    padding: 15px;
-    text-align: left;
-    color: black;
-}
-
-#messages { 
-    height: 180px; 
-    overflow-y: auto; 
-    background: white; 
-    padding: 5px; 
-    margin-bottom: 10px; 
-    border: 1px solid #333;
-}
-
-#name-input { width: 100%; margin-bottom: 5px; padding: 5px; }
-#chat-input { width: 70%; padding: 5px; }
+#status-bar { background: #333; padding: 15px; margin-bottom: 20px; border-radius: 10px; }
+#guess-mode-btn { background: #555; color: white; padding: 10px; cursor: pointer; margin: 5px; }
+#guess-mode-btn.active { background: gold; color: black; }
+#my-character { color: #00ff00; }
