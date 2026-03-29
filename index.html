@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shape Guess Who</title>
+    <title>Guess Bob</title>
     <script src="https://cdn.ably.com/lib/ably.min-1.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="game-container">
-        <h1>Shape Guess Who</h1>
+        <h1>Guess Bob</h1>
         
         <div id="status-bar">
-            <div id="secret-box">Your Secret Shape: <span id="my-character">???</span></div>
-            <div id="status">Connecting to friend...</div>
+            <div id="secret-box">Your Secret Shape: <span id="my-character" style="color:#00ff00">???</span></div>
+            <div id="status">Connected!</div>
         </div>
 
         <div id="game-board" class="grid"></div>
 
         <div id="chat-section">
+            <input type="text" id="name-input" placeholder="Your Name..." value="Player 1">
             <div id="messages"></div>
-            <input type="text" id="chat-input" placeholder="Ask a question (e.g. Is it a circle?)...">
-            <button onclick="sendMsg()">Send</button>
+            <div style="display:flex;">
+                <input type="text" id="chat-input" placeholder="Ask...">
+                <button onclick="sendMsg()">Send</button>
+            </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
