@@ -35,14 +35,28 @@ const mySecret = characters[Math.floor(Math.random() * characters.length)];
 document.getElementById('my-character').innerText = mySecret.name;
 
 // 4. Multiplayer Functions
+// ... (keep the top part with your API key and image generation the same) ...
+
+const nameInput = document.getElementById('name-input');
+
 function sendMsg() {
     const text = input.value;
+    const userName = nameInput.value || "Anonymous"; // Use the name from the box
+    
     if (text.trim() !== "") {
-        channel.publish('chat', { sender: 'Friend', text: text });
-        addMessage('You: ' + text);
+        channel.publish('chat', { sender: userName, text: text });
+        addMessage(userName + ': ' + text); // Show your own name in your chat
         input.value = '';
     }
 }
+
+channel.subscribe('chat', (msg) => {
+    if (msg.connectionId !== ably.connection.id) {
+        addMessage(msg.data.sender + ': ' + msg.data.text);
+    }
+});
+
+// ... (keep the rest of the code the same) ...
 
 // Listen for messages from your friend
 channel.subscribe('chat', (msg) => {
