@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Guess Bob</title>
     <script src="https://cdn.ably.com/lib/ably.min-1.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -11,18 +12,21 @@
             <div id="status-bar">
                 <h1>Guess Bob</h1>
                 <div id="score-display">You: <span id="my-score">0</span> | Friend: <span id="friend-score">0</span></div>
-                <div id="secret-box">Your Secret: <span id="my-character">???</span></div>
-                <button id="guess-mode-btn" onclick="toggleGuessMode()">OFFICIAL GUESS MODE: OFF</button>
-                <button onclick="requestReset()">Reset Board</button>
+                <div id="secret-box">Your Secret Shape: <span id="my-character">???</span></div>
+                <div id="button-row">
+                    <button id="guess-mode-btn" onclick="toggleGuessMode()">OFFICIAL GUESS MODE: OFF</button>
+                    <button onclick="requestReset()">Reset Board</button>
+                </div>
             </div>
             <div id="game-board" class="grid"></div>
         </div>
 
         <div id="sidebar">
-            <input type="text" id="name-input" placeholder="Your Name..." value="Player 1">
+            <label for="name-input">Your Name:</label>
+            <input type="text" id="name-input" placeholder="Name..." value="Player 1">
             <div id="messages"></div>
             <div id="input-area">
-                <input type="text" id="chat-input" placeholder="Type here...">
+                <input type="text" id="chat-input" placeholder="Type a message...">
                 <button onclick="sendMsg()">Send</button>
             </div>
         </div>
