@@ -1,5 +1,5 @@
 const IMAGE_EXTENSION = '.jpg';
-const API_KEY = LefjYQ.8r1mwQ:ZH_2I7wseILmuGoCOUiOFoJ-XX3zrbK2HTPIDpst20I; // <--- PASTE YOUR ROOT KEY HERE
+const API_KEY = 'LefjYQ.8r1mwQ:ZH_2I7wseILmuGoCOUiOFoJ-XX3zrbK2HTPIDpst20I'; // <--- PASTE YOUR ROOT KEY HERE
 
 let ably, channel;
 const shapes = ['circle', 'moon', 'square', 'cloud', 'triangle'];
