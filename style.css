@@ -11,3 +11,13 @@ body { font-family: sans-serif; text-align: center; background: #f0f0f0; }
 .card img { width: 100%; border-radius: 4px; }
 .card.flipped { opacity: 0.2; transform: scale(0.9); background: #999; }
 #secret-character { font-size: 1.2rem; font-weight: bold; color: blue; margin: 20px; }
+
+#chat-section {
+    position: fixed; bottom: 0; right: 0; width: 300px;
+    background: white; border: 2px solid #333; padding: 10px;
+    text-align: left; box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+#messages { height: 150px; overflow-y: auto; margin-bottom: 10px; font-size: 0.9rem; }
+#chat-input { width: 70%; }
+#status-bar { display: flex; justify-content: space-around; background: #333; color: white; padding: 10px; }
+#my-character { color: #00ff00; }
