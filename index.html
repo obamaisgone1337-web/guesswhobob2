@@ -6,21 +6,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-container">
-        <h1>Guess Bob</h1>
-        
-        <div id="status-bar">
-            <div id="secret-box">Your Secret Shape: <span id="my-character" style="color:#00ff00">???</span></div>
-            <div id="status">Connected!</div>
+    <div id="main-layout">
+        <div id="game-area">
+            <div id="status-bar">
+                <h1>Guess Bob</h1>
+                <div id="score-display">You: <span id="my-score">0</span> | Friend: <span id="friend-score">0</span></div>
+                <div id="secret-box">Your Secret: <span id="my-character">???</span></div>
+                <button id="guess-mode-btn" onclick="toggleGuessMode()">OFFICIAL GUESS MODE: OFF</button>
+                <button onclick="requestReset()">Reset Board</button>
+            </div>
+            <div id="game-board" class="grid"></div>
         </div>
 
-        <div id="game-board" class="grid"></div>
-
-        <div id="chat-section">
+        <div id="sidebar">
             <input type="text" id="name-input" placeholder="Your Name..." value="Player 1">
             <div id="messages"></div>
-            <div style="display:flex;">
-                <input type="text" id="chat-input" placeholder="Ask...">
+            <div id="input-area">
+                <input type="text" id="chat-input" placeholder="Type here...">
                 <button onclick="sendMsg()">Send</button>
             </div>
         </div>
