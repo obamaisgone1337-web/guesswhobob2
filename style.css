@@ -1,0 +1,13 @@
+body { font-family: sans-serif; text-align: center; background: #f0f0f0; }
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+    gap: 15px; padding: 20px; 
+}
+.card { 
+    background: white; border: 3px solid #333; border-radius: 8px; 
+    padding: 10px; cursor: pointer; transition: 0.3s;
+}
+.card img { width: 100%; border-radius: 4px; }
+.card.flipped { opacity: 0.2; transform: scale(0.9); background: #999; }
+#secret-character { font-size: 1.2rem; font-weight: bold; color: blue; margin: 20px; }
